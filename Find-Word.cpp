@@ -1,3 +1,10 @@
+//Tugas Find Word
+//Nama Kelompok:
+//Rifqi Syamsu Z (1817051032)
+//Rifqi Adiyatma (1817051055)
+//Tommy Ferdiansyah A (1817051072)
+//Gilang Rahman Affandy (1817051075)
+
 #include <iostream>
 #include <cstring>
 using namespace std;
@@ -22,7 +29,9 @@ int findword(char *(input))
 						  {'m','o','s','g','z','c','z','e','t','d','b','o','o','t','o'},
 						  {'p','d','c','r','z','m','s','n','g','r','d','n','r','p','z'},
 						  {'o','h','n','k','z','w','a','t','e','r','j','g','t','r','a'}
-						};			
+						};
+	for (int i=0;i<15;i++){
+		for (int j=0;j<15;j++){
 int main () {
 
 
