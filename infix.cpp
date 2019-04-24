@@ -52,4 +52,54 @@ using namespace std;
 					}
 				}
 		}
+		void display() {
+			int i;
+			cout<<"Stack: ";
+			for(i = 0;i<=top;i++){
+				cout<<data[i];}
+				cout<<endl;
+		}
+	};
 
+	int Precedence(char op){
+		if (op == '*' || op == '/'){
+			return 1;}
+		else if(op == '+' || op =='-'){
+			return 0;}
+		else return -1;
+		}
+
+	int Operator(char op){
+		string Operator = "+-*/";
+		for(int i=0;Operator[i];i++){
+			if(op == Operator[i]){
+				return 1;}
+			}
+		return 0;
+		}
+
+	int Operand(char op){
+		string Operand = "1234567890";
+		for(int i=0;Operand[i];i++){
+			if(op == Operand[i]){
+				return 1;}
+			}
+		return 0;
+		}
+
+	int hasil(int A,char C,int B){
+		double hasil;
+		if(C == '+'){
+			hasil = B+A;
+			}
+		else if(C == '-'){
+			hasil = B-A;
+			}
+		else if(C == '*'){
+			hasil = B*A;
+			}
+		else if(C == '/'){
+			hasil = B/A;
+			}
+		return (double)hasil;
+		}
