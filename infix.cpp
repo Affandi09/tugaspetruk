@@ -103,3 +103,59 @@ using namespace std;
 			}
 		return (double)hasil;
 		}
+	int main()
+	{	
+		Stack S;
+	    string data;
+		cout<<"input data infix :";
+					 getline(cin,data);
+
+
+	    S.removespace();
+
+	    string o;
+
+	    for(int i=0;data[i];i++){
+			if(Operand(data[i]) == 1){
+				o+=data[i];
+				}
+
+			else if(data[i] == '('){
+				S.Push(data[i]);
+				}
+
+			else if(data[i] == ')'){
+				while(S.IsEmpty() == 0 && S.Top() != '('){
+					char tmp = S.Top();
+					o+=tmp;
+					S.Pop();
+					}
+
+			if(S.Top() == '('){
+					S.Pop();}
+			}
+
+			if(Operator(data[i]) == 1){
+				if(S.IsEmpty() == 1 || S.Top() == '('){
+				S.Push(data[i]);}
+
+			else{
+				while (S.Top() != '(' && Precedence(data[i]) <= Precedence(S.Top())){
+					char tmp = S.Top();
+					o+=tmp;
+					S.Pop();
+					}
+				S.Push(data[i]);
+				}
+
+			}
+		}
+			while(S.IsEmpty() == 0){
+				char tmp = S.Top();
+					o+=tmp;
+					S.Pop();
+
+
+				}
+
+			cout<<"Postfix :";
