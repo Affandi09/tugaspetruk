@@ -159,3 +159,25 @@ using namespace std;
 				}
 
 			cout<<"Postfix :";
+			cout<<o<<endl;
+			Stack r;
+			for(int i=0;o[i];++i){
+				if(Operand(o[i]) == 1){
+					r.Push(o[i]);
+					}
+					
+
+				else if(Operator(o[i]) == 1){
+					int A,B;
+					A = r.Top()-'0';r.Pop();
+					B = r.Top()-'0';r.Pop();
+					r.Push(hasil(A,o[i],B));
+					}	
+
+				}
+			
+			int hasilakhir = r.Top();
+			cout<<"Expression: ";
+			cout<<hasilakhir;
+
+			}
